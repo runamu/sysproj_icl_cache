@@ -9,9 +9,17 @@ cd 24MLSYS-prompt-cache
 pip install -r requirements.txt
 ```
 
-Run:
+Run benchmark check:
 ```bash
 conda activate sysproj
 cd 24MLSYS-prompt-cache
 python -m benchmark.longbench
+```
+
+Run evaluation:
+```bash
+conda activate sysproj
+cd 24MLSYS-prompt-cache
+python eval.py --dataset icl_symbol
+python eval.py --enable_cache=True --dataset icl_symbol
 ```

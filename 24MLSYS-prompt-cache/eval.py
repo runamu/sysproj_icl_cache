@@ -16,6 +16,7 @@ from benchmark.benchmark_base import DATASET_LIST, SCHEMA_FILE_DIRECTORY
 from benchmark.squad_v2 import SquadV2
 from benchmark.multi_news import MultiNews
 from benchmark.ms_marco_v1_1 import MSMarcoV1
+from benchmark.icl_symbol import ICLSymbol
 
 BENCHMARK_PATH = "./benchmark"
 
@@ -147,6 +148,9 @@ class Eval:
 
             case "repobench-p":
                 self.dataset = LongBench("repobench-p")
+
+            case "icl_symbol":
+                self.dataset = ICLSymbol()
 
         # for testing purpose, limit the entries to a small number
         self.dataset.init()
