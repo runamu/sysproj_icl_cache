@@ -12,7 +12,9 @@ SCHEMA_FILE_DIRECTORY = "./benchmark/schema"
 DATASET_LIST = ["squad_v2", "multi_news", "wiki_qa", "pubmed_qa", "ms_marco", "narrativeqa", "qasper",
                 "multifieldqa_en", "hotpotqa", "2wikimqa", "musique", "dureader", "gov_report", "qmsum", "multi_news_long",
                 "vcsum", "trec", "triviaqa", "samsum", "lsht", "passage_count", "passage_retrieval_en", "lcc",
-                "repobench-p"]
+                "repobench-p",
+                "icl_symbol",
+                ]
 
 DATASET_SUBSET = {
     "pubmed_qa": ["pqa_artificial", "pqa_labeled", "pqa_unlabeled"],
@@ -62,7 +64,7 @@ class Benchmark(abc.ABC):
     @abc.abstractmethod
     def init(self, limit_entries=None):
         """
-        Download (one time) and load the dataset to run; 
+        Download (one time) and load the dataset to run;
         Preprocess the dataset to be organized in the `Entry` format.
         """
         raise NotImplementedError("This method should be overridden by subclass")

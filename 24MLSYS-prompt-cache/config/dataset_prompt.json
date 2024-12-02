@@ -126,5 +126,9 @@
   "ms_marco": {
     "context": "",
     "question": "Among the list of given documents separated by a comma, find the document that is most useful to answer the query and return its index starting at [0]. All documents are unrelated, return [-1]. Do not reply using a complete sentence, and only give the answer in the following format: [1]:\n"
+  },
+  "icl_symbol": {
+    "context": "{context}",
+    "question": ""
   }
 }

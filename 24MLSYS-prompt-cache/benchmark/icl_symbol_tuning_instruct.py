@@ -78,26 +78,31 @@ def escape_tags(input_str):
     return input_str.replace('<', '(').replace('>', ')')
 
 
-class LongBench(Benchmark):
-    def __init__(self, subset_name: str):
-        super().__init__(subset_name)
+class ICLSymbol(Benchmark):
+    def __init__(self):
+        super().__init__("icl_symbol")
+        # self.next_query_idx = 0
 
     def init(self, limit_entries=None):
         """
         Download (one time) and load the dataset to run;
         Preprocess the dataset to be organized in the `Entry` format.
         """
-        self.dataset = load_dataset('THUDM/LongBench', self.dataset_name)
+        self.dataset = load_dataset('tasksource/icl-symbol-tuning-instruct')
+        # assuming 4 characters per token and 1000 tokens
+        self.dataset = self.dataset.filter(lambda x:len(x['inputs'])<1000*4)
 
         count = 0
         for split in self.dataset.values():
             for item in split:
                 if limit_entries is not None and count >= limit_entries:
                     break
-                id = item["_id"]
-                schema_name = f"schema_{id}"
 
-                fmt_schema = self.dataset_prompt["context"].format(context=escape_tags(item["context"]))
+                # import ipdb; ipdb.set_trace()
+                schema_name = f"schema_{count}"
+
+                fmt_schema = self.dataset_prompt["context"].format(context=escape_tags(item["inputs"]))
+                # TODO: use item['task'] and item['symbols'] if needed
 
                 schema_content = f"""
 <schema name="{schema_name}">
@@ -128,15 +133,15 @@ class LongBench(Benchmark):
                 prompt = f"""
                 <prompt schema='{schema_name}'>
                 <context/>
-                {self.dataset_prompt["question"].format(input=escape_tags(item["input"])[:1000])}</user><assistant>{self.dataset_prompt["answer"]}</prompt>
+                <user>{self.dataset_prompt["question"]}</user></prompt>
                 """
-                self.entries.append(Entry(schema_file_name, prompt, item["answers"]))
+                self.entries.append(Entry(schema_file_name, prompt, item["targets"]))
 
                 count += 1
 
 
 if __name__ == '__main__':
-    sq = LongBench('narrativeqa')
+    sq = ICLSymbol()
     sq.init()
     print(sq.get_entry_count())
     print(sq.get_query((100, 101)))
