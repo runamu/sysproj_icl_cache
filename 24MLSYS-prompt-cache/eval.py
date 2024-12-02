@@ -153,7 +153,7 @@ class Eval:
                 self.dataset = ICLSymbol()
 
         # for testing purpose, limit the entries to a small number
-        self.dataset.init()
+        self.dataset.init(limit_entries=200)
 
         # create result directory
         self.result_directory = os.path.join(BENCHMARK_PATH, "results",
