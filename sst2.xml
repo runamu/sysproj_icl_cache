@@ -12,56 +12,55 @@
         Here are a few example interactions:
     </system>
     <user>
-
     </user>
 
   <module name="module_1">
-    Sentence: hide new secretions from the parental units 
+    Sentence: hide new secretions from the parental units
     Label: 0
   </module>
 
   <module name="module_2">
-    Sentence: contains no wit , only labored gags 
+    Sentence: contains no wit , only labored gags
     Label: 0
   </module>
 
   <module name="module_3">
-    Sentence: that loves its characters and communicates something rather beautiful about human nature 
+    Sentence: that loves its characters and communicates something rather beautiful about human nature
     Label: 1
   </module>
 
   <module name="module_4">
-    Sentence: remains utterly satisfied to remain the same throughout 
+    Sentence: remains utterly satisfied to remain the same throughout
     Label: 0
   </module>
 
   <module name="module_5">
-    Sentence: on the worst revenge-of-the-nerds clichés the filmmakers could dredge up 
+    Sentence: on the worst revenge-of-the-nerds clichés the filmmakers could dredge up
     Label: 0
   </module>
 
   <module name="module_6">
-    Sentence: that 's far too tragic to merit such superficial treatment 
+    Sentence: that 's far too tragic to merit such superficial treatment
     Label: 0
   </module>
 
   <module name="module_7">
-    Sentence: demonstrates that the director of such hollywood blockbusters as patriot games can still turn out a small , personal film with an emotional wallop . 
+    Sentence: demonstrates that the director of such hollywood blockbusters as patriot games can still turn out a small , personal film with an emotional wallop .
     Label: 1
   </module>
 
   <module name="module_8">
-    Sentence: of saucy 
+    Sentence: of saucy
     Label: 1
   </module>
 
   <module name="module_9">
-    Sentence: a depressed fifteen-year-old 's suicidal poetry 
+    Sentence: a depressed fifteen-year-old 's suicidal poetry
     Label: 0
   </module>
 
   <module name="module_10">
-    Sentence: are more deeply thought through than in most ` right-thinking ' films 
+    Sentence: are more deeply thought through than in most ` right-thinking ' films
     Label: 1
   </module>
 </schema>

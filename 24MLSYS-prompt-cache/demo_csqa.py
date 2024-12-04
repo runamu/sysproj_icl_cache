@@ -20,23 +20,24 @@ def escape_tags(input_str):
 
     return re.sub(pattern, repl, input_str)
 
-def format_riddle(riddle_data, with_answer=True):
-    # Extract question stem and choices from the dictionary
-    stem = riddle_data['question']['stem']
-    choices = riddle_data['question']['choices']
-    answer_key = riddle_data['answerKey']
+def format_csqa(csqa_data, with_answer=True):
+    # Extract question and choices from the dictionary
+    question = csqa_data['question']
+    choices = csqa_data['choices']
+    answer_key = csqa_data['answerKey']
 
     # Find the text of the choice corresponding to the answer key
-    answer_text = next(choice['text'] for choice in choices if choice['label'] == answer_key)
+    answer_index = choices['label'].index(answer_key)
+    answer_text = choices['text'][answer_index]
 
     # Create the formatted output using an f-string
     if with_answer:
-        output = f"""Question: {stem}
-Choices: {' '.join(f"({choice['label']}) {choice['text']}" for choice in choices)}
+        output = f"""Question: {question}
+Choices: {' '.join([f'({label}) {text}' for label, text in zip(choices['label'], choices['text'])])}
 Output: {answer_text}"""
     else:
-        output = f"""Question: {stem}
-Choices: {' '.join(f"({choice['label']}) {choice['text']}" for choice in choices)}
+        output = f"""Question: {question}
+Choices: {' '.join([f'({label}) {text}' for label, text in zip(choices['label'], choices['text'])])}
 Output: """
 
     return output
@@ -107,7 +108,7 @@ def main(enable_cache=False, cuda_device=0, result_file_name=None):
         stop_str=lm.stop_str
     )
     # with open('/home/stilex/dst/LLaMA-Factory/data/gsm8k.jsonl', 'r') as file:
-    with open('../dataset/riddlesense/rs_train.jsonl', 'r') as file:
+    with open('../dataset/csqa/csqa_train.jsonl', 'r') as file:
         # Read all lines from the file
         lines = file.readlines()
 
@@ -116,7 +117,7 @@ def main(enable_cache=False, cuda_device=0, result_file_name=None):
             # Parse each line as a JSON object
             # import ipdb; ipdb.set_trace()
             question_data = json.loads(lines[i].strip())  # Strip any extra whitespace/newlines
-            question = format_riddle(question_data, with_answer=False)
+            question = format_csqa(question_data, with_answer=False)
             print(f"Question {i + 1}: {question}")
             random_numbers = [random.randint(1, 10) for _ in range(3)]
 
