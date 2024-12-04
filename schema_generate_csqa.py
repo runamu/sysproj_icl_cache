@@ -2,26 +2,27 @@ import json
 import os
 
 # Input file and output file paths
-input_file = "dataset/riddlesense/rs_train.jsonl"
-output_file = "riddle.xml"
+input_file = "dataset/csqa/csqa_train.jsonl"
+output_file = "csqa.xml"
 
-def format_riddle(riddle_data, with_answer=True):
-    # Extract question stem and choices from the dictionary
-    stem = riddle_data['question']['stem']
-    choices = riddle_data['question']['choices']
-    answer_key = riddle_data['answerKey']
+def format_csqa(csqa_data, with_answer=True):
+    # Extract question and choices from the dictionary
+    question = csqa_data['question']
+    choices = csqa_data['choices']
+    answer_key = csqa_data['answerKey']
 
     # Find the text of the choice corresponding to the answer key
-    answer_text = next(choice['text'] for choice in choices if choice['label'] == answer_key)
+    answer_index = choices['label'].index(answer_key)
+    answer_text = choices['text'][answer_index]
 
     # Create the formatted output using an f-string
     if with_answer:
-        output = f"""Question: {stem}
-Choices: {' '.join(f"({choice['label']}) {choice['text']}" for choice in choices)}
+        output = f"""Question: {question}
+Choices: {' '.join([f'({label}) {text}' for label, text in zip(choices['label'], choices['text'])])}
 Output: {answer_text}"""
     else:
-        output = f"""Question: {stem}
-Choices: {' '.join(f"({choice['label']}) {choice['text']}" for choice in choices)}
+        output = f"""Question: {question}
+Choices: {' '.join([f'({label}) {text}' for label, text in zip(choices['label'], choices['text'])])}
 Output: """
 
     return output
@@ -50,7 +51,7 @@ def generate_pml_schema(schema_name, modules):
     for i, module in enumerate(modules):
         pml_template += f"""
   <module name="module_{i + 1}">
-     {format_riddle(module)}
+     {format_csqa(module)}
   </module>
 """
         # # Example module:
@@ -78,7 +79,7 @@ def main():
 
     # Generate PML schema
     print("Generating PML schema...")
-    pml_content = generate_pml_schema("riddle", data)
+    pml_content = generate_pml_schema("csqa", data)
 
     # Save PML schema to file
     print(f"Saving PML schema to {output_file}...")

@@ -1,0 +1,69 @@
+<schema name="csqa">
+    <system>
+        You will learn how to answer questions by studying a few example interactions. Analyze the provided examples carefully, identify the underlying patterns, reasoning approach, and response structure. Then apply these insights to solve a new, unseen question.
+        For the upcoming interaction, I will provide you with several example question-answer pairs to demonstrate the desired response style and reasoning method. After studying these examples, you will be asked to answer a new question using the same approach.
+    </system>
+    <user>
+        Answer the last question.
+    </user>
+
+  <module name="module_1">
+     Question: The sanctions against the school were a punishing blow, and they seemed to what the efforts the school had made to change?
+Choices: (A) ignore (B) enforce (C) authoritarian (D) yell at (E) avoid
+Output: ignore
+  </module>
+
+  <module name="module_2">
+     Question: Sammy wanted to go to where the people were.  Where might he go?
+Choices: (A) race track (B) populated areas (C) the desert (D) apartment (E) roadblock
+Output: populated areas
+  </module>
+
+  <module name="module_3">
+     Question: To locate a choker not located in a jewelry box or boutique where would you go?
+Choices: (A) jewelry store (B) neck (C) jewlery box (D) jewelry box (E) boutique
+Output: jewelry store
+  </module>
+
+  <module name="module_4">
+     Question: Google Maps and other highway and street GPS services have replaced what?
+Choices: (A) united states (B) mexico (C) countryside (D) atlas (E) oceans
+Output: atlas
+  </module>
+
+  <module name="module_5">
+     Question: The fox walked from the city into the forest, what was it looking for?
+Choices: (A) pretty flowers. (B) hen house (C) natural habitat (D) storybook (E) dense forest
+Output: natural habitat
+  </module>
+
+  <module name="module_6">
+     Question: What home entertainment equipment requires cable?
+Choices: (A) radio shack (B) substation (C) cabinet (D) television (E) desk
+Output: television
+  </module>
+
+  <module name="module_7">
+     Question: The only baggage the woman checked was a drawstring bag, where was she heading with it?
+Choices: (A) garbage can (B) military (C) jewelry store (D) safe (E) airport
+Output: airport
+  </module>
+
+  <module name="module_8">
+     Question: The forgotten leftovers had gotten quite old, he found it covered in mold in the back of his what?
+Choices: (A) carpet (B) refrigerator (C) breadbox (D) fridge (E) coach
+Output: refrigerator
+  </module>
+
+  <module name="module_9">
+     Question: What do people use to absorb extra ink from a fountain pen?
+Choices: (A) shirt pocket (B) calligrapher's hand (C) inkwell (D) desk drawer (E) blotter
+Output: blotter
+  </module>
+
+  <module name="module_10">
+     Question: Where is a business restaurant likely to be located?
+Choices: (A) town (B) at hotel (C) mall (D) business sector (E) yellow pages
+Output: business sector
+  </module>
+</schema>

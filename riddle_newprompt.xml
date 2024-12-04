@@ -6,9 +6,6 @@
     <user>
         Answer the last question.
     </user>
-    <assistant>
-        I understand. I will carefully examine the example interactions, extract the key principles and patterns of response, and then apply this learned approach to the new question. Please provide the example question-answer pairs.
-    </assistant>
 
   <module name="module_1">
      Question: A man is incarcerated in prison, and as his punishment he has to carry a one tonne bag of sand backwards and forwards across a field the size of a football pitch.  What is the one thing he can put in it to make it lighter?

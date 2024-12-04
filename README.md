@@ -32,10 +32,14 @@ Run demo:
 ```bash
 conda activate sysproj
 cd 24MLSYS-prompt-cache
+
+python demo_math.py --cuda_device 2 > outputs/math_no_cache_codellama.log # could not run with 12GB GPU due to cache size
+
 python demo_riddle.py --enable_cache True > outputs/riddle_with_cache_llama2.log # use 8bit quantization on 12GB GPU
 python demo_riddle.py --cuda_device 1 > outputs/riddle_no_cache_llama2.log # use 8bit quantization on 12GB GPU
-python demo_math.py --cuda_device 2 > outputs/math_no_cache_codellama.log # could not run with 12GB GPU due to cache size
-python demo_riddle.py --enable_cache True --cuda_device 2 > outputs/riddle_with_cache_llama2_newprompt.log
-# python demo_riddle.py --enable_cache True --cuda_device 2 --result_file_name riddle_with_cache_llama2_newprompt > outputs/riddle_with_cache_llama2_newprompt.log
+python demo_riddle.py --cuda_device 2 --result_file_name riddle_with_cache_llama2_newprompt --enable_cache True > outputs/riddle_with_cache_llama2_newprompt.log
 python demo_riddle.py --cuda_device 3 --result_file_name riddle_no_cache_llama2_newprompt > outputs/riddle_no_cache_llama2_newprompt.log
+
+python demo_csqa.py --cuda_device 4 --result_file_name csqa_no_cache_llama2 > outputs/csqa_no_cache_llama2.log
+python demo_csqa.py --cuda_device 5 --result_file_name csqa_with_cache_llama2 --enable_cache True > outputs/csqa_with_cache_llama2.log
 ```

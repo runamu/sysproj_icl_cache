@@ -1,0 +1,7 @@
+Question: {question}
+Choices: {' '.join([f'({label}) {text}' for label, text in zip(choices['label'], choices['text'])])}
+Output: {answer_text}'''
+    else:
+        output = f'''Question: {question}
+Choices: {' '.join([f'({label}) {text}' for label, text in zip(choices['label'], choices['text'])]))}
+Output:
