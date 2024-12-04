@@ -42,4 +42,7 @@ python demo_riddle.py --cuda_device 3 --result_file_name riddle_no_cache_llama2_
 
 python demo_csqa.py --cuda_device 4 --result_file_name csqa_no_cache_llama2 > outputs/csqa_no_cache_llama2.log
 python demo_csqa.py --cuda_device 5 --result_file_name csqa_with_cache_llama2 --enable_cache True > outputs/csqa_with_cache_llama2.log
+
+python demo_sst2.py --cuda_device 6 --result_file_name sst2_no_cache_llama2 > outputs/sst2_no_cache_llama2.log
+python demo_sst2.py --cuda_device 7 --result_file_name sst2_with_cache_llama2 --enable_cache True > outputs/sst2_with_cache_llama2.log
 ```

@@ -1,0 +1,67 @@
+<schema name="sst2">
+    <system>
+        #### Task Description ####
+        You are tasked with binary sentiment analysis. Analyze the provided examples carefully to understand the task. Each example consists of a sentence and its corresponding sentiment label. The label `1` represents positive sentiment, and the label `0` represents negative sentiment. After reviewing the examples, classify the LAST sentence based on its sentiment. Respond with a single word, either `0` or `1`.
+
+        #### Response Format ####
+        Respond in a JSON format with the following structure:
+        {"label": sentiment_label}]
+        Do NOT provide any explanations or additional text. Do NOT include the labels of the examples in your response.
+
+        #### Examples ####
+        Here are a few example interactions:
+    </system>
+    <user>
+
+    </user>
+
+  <module name="module_1">
+    Sentence: hide new secretions from the parental units 
+    Label: 0
+  </module>
+
+  <module name="module_2">
+    Sentence: contains no wit , only labored gags 
+    Label: 0
+  </module>
+
+  <module name="module_3">
+    Sentence: that loves its characters and communicates something rather beautiful about human nature 
+    Label: 1
+  </module>
+
+  <module name="module_4">
+    Sentence: remains utterly satisfied to remain the same throughout 
+    Label: 0
+  </module>
+
+  <module name="module_5">
+    Sentence: on the worst revenge-of-the-nerds clichés the filmmakers could dredge up 
+    Label: 0
+  </module>
+
+  <module name="module_6">
+    Sentence: that 's far too tragic to merit such superficial treatment 
+    Label: 0
+  </module>
+
+  <module name="module_7">
+    Sentence: demonstrates that the director of such hollywood blockbusters as patriot games can still turn out a small , personal film with an emotional wallop . 
+    Label: 1
+  </module>
+
+  <module name="module_8">
+    Sentence: of saucy 
+    Label: 1
+  </module>
+
+  <module name="module_9">
+    Sentence: a depressed fifteen-year-old 's suicidal poetry 
+    Label: 0
+  </module>
+
+  <module name="module_10">
+    Sentence: are more deeply thought through than in most ` right-thinking ' films 
+    Label: 1
+  </module>
+</schema>

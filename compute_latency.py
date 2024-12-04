@@ -1,7 +1,11 @@
 import re
 
-# log_file_path = "/home/yedasong/sysproj_base/sysproj_icl_cache/24MLSYS-prompt-cache/outputs/riddle_no_cache_llama2.log"
-log_file_path = "/home/yedasong/sysproj_base/sysproj_icl_cache/24MLSYS-prompt-cache/outputs/riddle_with_cache_llama2.log"
+# log_file_path = "24MLSYS-prompt-cache/outputs/riddle_no_cache_llama2.log"
+# log_file_path = "24MLSYS-prompt-cache/outputs/riddle_with_cache_llama2.log"
+
+# log_file_path = "24MLSYS-prompt-cache/outputs/sst2_no_cache_llama2.log"
+log_file_path = "24MLSYS-prompt-cache/outputs/sst2_with_cache_llama2.log"
+
 
 # Sample log data
 with open(log_file_path, "r") as file:
