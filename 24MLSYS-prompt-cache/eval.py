@@ -17,6 +17,7 @@ from benchmark.squad_v2 import SquadV2
 from benchmark.multi_news import MultiNews
 from benchmark.ms_marco_v1_1 import MSMarcoV1
 from benchmark.icl_symbol import ICLSymbol
+from benchmark.icl_riddlesense import ICLRiddleSense
 
 BENCHMARK_PATH = "./benchmark"
 
@@ -151,6 +152,9 @@ class Eval:
 
             case "icl_symbol":
                 self.dataset = ICLSymbol()
+
+            case "icl_riddlesense":
+                self.dataset = ICLRiddleSense()
 
         # for testing purpose, limit the entries to a small number
         self.dataset.init(limit_entries=200)

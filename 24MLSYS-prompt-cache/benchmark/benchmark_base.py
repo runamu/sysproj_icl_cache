@@ -13,7 +13,7 @@ DATASET_LIST = ["squad_v2", "multi_news", "wiki_qa", "pubmed_qa", "ms_marco", "n
                 "multifieldqa_en", "hotpotqa", "2wikimqa", "musique", "dureader", "gov_report", "qmsum", "multi_news_long",
                 "vcsum", "trec", "triviaqa", "samsum", "lsht", "passage_count", "passage_retrieval_en", "lcc",
                 "repobench-p",
-                "icl_symbol",
+                "icl_symbol", "icl_riddlesense",
                 ]
 
 DATASET_SUBSET = {

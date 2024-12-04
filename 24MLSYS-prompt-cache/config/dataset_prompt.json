@@ -130,5 +130,9 @@
   "icl_symbol": {
     "context": "{context}",
     "question": ""
+  },
+  "icl_riddlesense": {
+    "context": "{context}",
+    "question": ""
   }
 }

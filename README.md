@@ -20,6 +20,10 @@ Run evaluation:
 ```bash
 conda activate sysproj
 cd 24MLSYS-prompt-cache
+python eval.py --dataset squad_v2
 python eval.py --dataset icl_symbol
 python eval.py --enable_cache=True --dataset icl_symbol
+
+python eval.py --dataset icl_riddlesense
+python eval.py --enable_cache=True --dataset icl_riddlesense
 ```
