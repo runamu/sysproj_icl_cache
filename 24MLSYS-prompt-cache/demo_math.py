@@ -20,20 +20,22 @@ def escape_tags(input_str):
     return re.sub(pattern, repl, input_str)
 
 
-def main(enable_cache=False):
+def main(enable_cache=False, cuda_device=0):
     enable_cpu_inference = False
     disable_prompt_cache = not enable_cache
 
+    torch.cuda.set_device(cuda_device)
+
     lm_for_cache = CodeLlama("codellama/CodeLlama-7b-Instruct-hf",
-                             load_in_8bit=False,
-                             device_map="cuda")
+                             load_in_8bit=True,
+                             device_map=f"cuda:{cuda_device}")
                             #  device_map=None)
 
     lm = lm_for_cache
 
     if enable_cpu_inference:
         lm = CodeLlama("codellama/CodeLlama-7b-Instruct-hf",
-                       load_in_8bit=False,
+                       load_in_8bit=True,
                        device_map=None)
 
     # lm = Falcon("tiiuae/falcon-7b-instruct",

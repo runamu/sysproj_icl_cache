@@ -40,9 +40,11 @@ Output: """
 
     return output
 
-def main(enable_cache=False):
+def main(enable_cache=False, cuda_device=0):
     enable_cpu_inference = False
     disable_prompt_cache = not enable_cache
+
+    torch.cuda.set_device(cuda_device)
 
     # lm_for_cache = CodeLlama("codellama/CodeLlama-7b-Instruct-hf",
     #                          load_in_8bit=True,
@@ -51,7 +53,7 @@ def main(enable_cache=False):
 
     lm_for_cache = Llama2("meta-llama/Llama-2-7b-chat-hf",
                              load_in_8bit=True,
-                             device_map="cuda")
+                             device_map=f"cuda:{cuda_device}")
                             #  device_map=None)
 
     lm = lm_for_cache
@@ -101,7 +103,7 @@ def main(enable_cache=False):
         # Start from the 101st entry (index 100)
         for i in range(100, len(lines)):
             # Parse each line as a JSON object
-            import ipdb; ipdb.set_trace()
+            # import ipdb; ipdb.set_trace()
             question_data = json.loads(lines[i].strip())  # Strip any extra whitespace/newlines
             question = format_riddle(question_data, with_answer=False)
             print(f"Question {i + 1}: {question}")
@@ -144,7 +146,7 @@ def main(enable_cache=False):
 
             print("\n")
             prompt_text += f"<assistant>{resp}</assistant>"
-            import ipdb; ipdb.set_trace()
+            # import ipdb; ipdb.set_trace()
             print("prompt_text:", prompt_text)
 
 def seed_everything(seed):
