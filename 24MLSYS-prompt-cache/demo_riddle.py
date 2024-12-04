@@ -10,6 +10,7 @@ import json
 from promptcache import Prompt, CompactSpaces, read_file, CacheEngine, \
     GenerationEngine, GenerationParameters, llama2_template
 
+import os
 
 def escape_tags(input_str):
     pattern = r'<(?P<content>.*?)>'
@@ -40,7 +41,17 @@ Output: """
 
     return output
 
-def main(enable_cache=False, cuda_device=0):
+def store_results(results, filename):
+    # if self.enable_cache:
+    #     prefix = "with_cache"
+    # else:
+    #     prefix = "no_cache"
+
+    with open(os.path.join("outputs/results", f"{filename}.json"), "a") as f:
+        json.dump(results, f)
+        f.write("\n")
+
+def main(enable_cache=False, cuda_device=0, result_file_name=None):
     enable_cpu_inference = False
     disable_prompt_cache = not enable_cache
 
@@ -84,7 +95,8 @@ def main(enable_cache=False, cuda_device=0):
     ]
 
     # cache_engine.add_schema(read_file("/home/stilex/24MLSYS-prompt-cache/math.xml", preproc), max_tokens=800)
-    cache_engine.add_schema(read_file("../riddle.xml", preproc), max_tokens=800)
+    # cache_engine.add_schema(read_file("../riddle.xml", preproc), max_tokens=800)
+    cache_engine.add_schema(read_file("../riddle_newprompt.xml", preproc), max_tokens=800)
 
     parameter = GenerationParameters(
         temperature=1.0,
@@ -143,6 +155,14 @@ def main(enable_cache=False, cuda_device=0):
             tt = " ".join(output_text[pre:])
             print(tt, flush=True)
             resp += tt
+
+            if result_file_name:
+                result = {
+                    "cache_time": cache_time,
+                    "answers": question_data['answerKey'],
+                    "response": resp
+                }
+                store_results(result, result_file_name)
 
             print("\n")
             prompt_text += f"<assistant>{resp}</assistant>"
