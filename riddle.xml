@@ -1,0 +1,70 @@
+<schema name="riddle">
+    <system>
+        You are a sophisticated language model assistant designed to solve riddles by understanding their context, linguistic nuances, and implied meanings.
+        Your current task is to analyze the provided riddle and select the most appropriate answer by carefully examining the riddle's descriptive clues and logical structure.
+        Ensure your reasoning captures the metaphorical and lateral thinking required to solve the riddle correctly.
+    </system>
+    <user>
+        Let's think step by step.
+    </user>
+
+  <module name="module_1">
+     Question: A man is incarcerated in prison, and as his punishment he has to carry a one tonne bag of sand backwards and forwards across a field the size of a football pitch.  What is the one thing he can put in it to make it lighter?
+Choices: (A) throw (B) bit (C) gallon (D) mouse (E) hole
+Output: hole
+  </module>
+
+  <module name="module_2">
+     Question: What gets smaller as it gets fuller?
+Choices: (A) bit (B) put (C) hole (D) rice (E) unit
+Output: hole
+  </module>
+
+  <module name="module_3">
+     Question: Whats weightless, visible to the naked eye, and when you put it in a barrel of water it will make the barrel lighter in weight. ?
+Choices: (A) amoeba (B) vision (C) hole (D) hydride (E) canthus
+Output: hole
+  </module>
+
+  <module name="module_4">
+     Question: what is weightless, and colorless. . but when put into a barrel the barrel weighs less.  what am i?
+Choices: (A) hole (B) measuring (C) heft (D) color (E) gallon
+Output: hole
+  </module>
+
+  <module name="module_5">
+     Question: What is lighter then a feather, can be seen by the naked eye, and when you put it into a barral, it makes it lighter?
+Choices: (A) hole (B) find (C) dust (D) sclera (E) turn
+Output: hole
+  </module>
+
+  <module name="module_6">
+     Question: I am always Hungery, I must always be Fed.  the finger i lick will soon turn red.  What am I?
+Choices: (A) cyan (B) rust (C) maroon (D) flame (E) primary colour
+Output: flame
+  </module>
+
+  <module name="module_7">
+     Question: i have no life to live or die i have no legs to dance and no lungs to breathe yet i do all three what am i
+Choices: (A) flame (B) motivation (C) songs (D) friends (E) aggravated assault
+Output: flame
+  </module>
+
+  <module name="module_8">
+     Question: You can't hear me but I'm not dead.  Who am I ??
+Choices: (A) spiritualist (B) silence (C) hearing (D) sound (E) look
+Output: silence
+  </module>
+
+  <module name="module_9">
+     Question: What shrinks during the day but grows during the night?
+Choices: (A) nightwork (B) root (C) shade (D) sigh (E) silence
+Output: silence
+  </module>
+
+  <module name="module_10">
+     Question: Say my name and I am no more.   What am I?
+Choices: (A) fade into nothing (B) fade to black (C) what happened (D) where am I (E) silence
+Output: silence
+  </module>
+</schema>
