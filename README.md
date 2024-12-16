@@ -1,6 +1,5 @@
 # Project: ICL Cache
 
-## Run PromptCache
 Environment:
 ```bash
 conda create -n sysproj python=3.10
