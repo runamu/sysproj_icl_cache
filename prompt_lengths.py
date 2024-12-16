@@ -40,6 +40,7 @@ data_paths = [
     "csqa.xml",
     "riddle_newprompt.xml",
     "sst2.xml",
+    "wmt.xml",
 ]
 
 for data_path in data_paths:
