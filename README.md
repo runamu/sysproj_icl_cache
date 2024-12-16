@@ -45,4 +45,7 @@ python demo_csqa.py --cuda_device 5 --result_file_name csqa_with_cache_llama2 --
 
 python demo_sst2.py --cuda_device 6 --result_file_name sst2_no_cache_llama2 > outputs/sst2_no_cache_llama2.log
 python demo_sst2.py --cuda_device 7 --result_file_name sst2_with_cache_llama2 --enable_cache True > outputs/sst2_with_cache_llama2.log
+
+python demo_wmt.py --cuda_device 0 --result_file_name wmt_no_cache_llama2 > outputs/wmt_no_cache_llama2.log
+python demo_wmt.py --cuda_device 1 --result_file_name wmt_with_cache_llama2 --enable_cache True > outputs/wmt_with_cache_llama2.log
 ```

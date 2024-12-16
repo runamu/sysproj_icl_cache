@@ -1,0 +1,66 @@
+<schema name="wmt">
+    <system>
+        #### Task Description ####
+        Translate the following English sentences into French. Pay close attention to maintaining the meaning, tone, and grammatical structure of the original sentence. Use the examples provided below as a reference for style, vocabulary, and grammar.
+
+        #### Response Format ####
+        Respond in a JSON format with the following structure:
+        {"French": translated_sentence}]
+        Do NOT provide any explanations or additional text. Do NOT include the labels of the examples in your response.
+
+        #### Examples ####
+        Here are a few example interactions:
+    </system>
+    <user>
+    </user>
+
+  <module name="module_1">
+    English: Changing Lives | Changing Society | How It Works | Technology Drives Change Home | Concepts | Teachers | Search | Overview | Credits | HHCC Web | Reference | Feedback Virtual Museum of Canada Home Page
+    French: Il a transformé notre vie | Il a transformé la société | Son fonctionnement | La technologie, moteur du changement Accueil | Concepts | Enseignants | Recherche | Aperçu | Collaborateurs | Web HHCC | Ressources | Commentaires Musée virtuel du Canada
+  </module>
+
+  <module name="module_2">
+    English: The white light spectrum Codes in the light The electromagnetic spectrum Emission spectra Absorption spectra Light-years Light pollution
+    French: La découverte du spectre de la lumière blanche Des codes dans la lumière Le spectre électromagnétique Les spectres d’émission Les spectres d’absorption Les années-lumière La pollution lumineuse
+  </module>
+
+  <module name="module_3">
+    English: The sky of the first inhabitants A contemporary vison of the Universe Astronomy for everyone
+    French: Le ciel des premiers habitants La vision contemporaine de l'Univers L’astronomie pour tous
+  </module>
+
+  <module name="module_4">
+    English: Astronomers Introduction Introduction video What is Astronomy?
+    French: Astronomes Introduction Vidéo d'introduction Qu'est-ce que l'astronomie?
+  </module>
+
+  <module name="module_5">
+    English: Often considered the oldest science, it was born of our amazement at the sky and our need to question Astronomy is the science of space beyond Earth’s atmosphere.
+    French: Souvent considérée comme la plus ancienne des sciences, elle découle de notre étonnement et de nos questionnements envers le ciel L'astronomie est la science qui étudie l'Univers au-delà de l'atmosphère terrestre.
+  </module>
+
+  <module name="module_6">
+    English: The name is derived from the Greek root astron for star, and nomos for arrangement or law.
+    French: Son nom vient du grec astron, qui veut dire étoile et nomos, qui veut dire loi.
+  </module>
+
+  <module name="module_7">
+    English: Astronomy is concerned with celestial objects and phenomena – like stars, planets, comets and galaxies – as well as the large-scale properties of the Universe, also known as "The Big Picture".
+    French: Elle s'intéresse à des objets et des phénomènes tels que les étoiles, les planètes, les comètes, les galaxies et les propriétés de l'Univers à grande échelle.
+  </module>
+
+  <module name="module_8">
+    English: More specifically, astronomy is the study of the origin and evolution of the Universe, the physics and chemistry of celestial objects, and the calculation of their positions and motions.
+    French: Plus spécifiquement, elle étudie la formation et l'évolution de l'Univers, détermine les propriétés physiques et chimiques des objets célestes qu'il contient et mesure leurs déplacements.
+  </module>
+
+  <module name="module_9">
+    English: For most people, astronomy represents a world that is both mysterious and grandiose – a story about glimmering celestial objects and the immensity of the cosmos.
+    French: Pour la majorité des gens, l'astronomie évoque un monde à la fois mystérieux et grandiose, celui des étoiles et de l'immensité cosmique.
+  </module>
+
+  <module name="module_10">
+    English: It prompts us to ask the deepest existential questions:
+    French: L'astronomie évoque donc aussi les grandes questions « existentielles » :
+  </module>
+</schema>
